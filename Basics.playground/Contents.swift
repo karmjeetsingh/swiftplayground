@@ -18,6 +18,11 @@ var currentLoginAttemp = 0
 
 //We can declar multiple type at single line
 var x = 1.0, y = 3.4, z = 21.1
+var num1 = 3, num2 = 2.4, char = "goodwill"
 
 // Type annotation . declaring data type
 var welcomeMessage: String
+welcomeMessage = "Welcome to USA"
+var  red, pink, green: Double
+
+// type safe and type inference
