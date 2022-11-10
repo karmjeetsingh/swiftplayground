@@ -79,6 +79,8 @@ print(max64bit)
 let attemps = 5; let pi = 3.14
 // swift automatically infer the data type for two contants  Int and Double
 // by default consider Double to fraction number or decimal number
+// --> Type check is performed while compling a data  or Compile time.
+// --> Type inferernce is perfomed at compling time. swift find type of data
 
 //MARK: Number system
 let decimalInteger = 17
@@ -92,3 +94,4 @@ let hexadecimalInteger = 0x11 //17
 //1.25e-2  = 1.25 * 10 power -2 or 0.0125
 
 // --> Any number signed and Unsigned called Litral
+
