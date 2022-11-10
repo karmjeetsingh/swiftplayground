@@ -94,4 +94,73 @@ let hexadecimalInteger = 0x11 //17
 //1.25e-2  = 1.25 * 10 power -2 or 0.0125
 
 // --> Any number signed and Unsigned called Litral
+// In case of decimal for exponent , we use e or E but in case of Hexadeciaml for exponent, we use P or p
+// Eg
+var hexd = 0xFp2
+// 15 * 2 power 2  or 60.0
+print(hexd)
+var hexd2 = 0xBP-2
+print(hexd2)
 
+let decimalDouble = 12.123456
+let exponentDouble = 1.1234e2
+let hexadecimalDouble = 0xC.3p1
+
+let numericDouble = 00001234.567
+let oneMillion = 1_000_000
+print(oneMillion)
+let justOverOneMillion = 1_000.000_000_1
+print(justOverOneMillion)
+
+//NOTE:- Use int for all numric conventional
+
+var twoThousand: UInt16 = 2_000
+let one: UInt8 = 2
+twoThousand = twoThousand + UInt16(one)
+
+
+var pie = 3.14
+pie = pie + 5
+print(pie)
+
+//MARK: type aliases
+// use another name for exisitnig
+typealias Numeric16 = Int
+let number6:Int16 = 44
+print(number6)
+
+print(Int16.max);print(Int64.max);print(Int32.max)
+
+//MARK: Boolian or bool
+let trueValue:Bool = true
+let falseValue = false
+if falseValue {
+    print("true value")
+}else{
+    print("false value")}
+
+let oneNum = 1
+if oneNum == 1 {print("yes")}
+if oneNum != 0 {print("yes")}
+
+//MARK: Tuples
+// grouping together value of different or same type into single compound value
+
+let tupleSingh: (Int, String) = (401,"page not found")
+var tuple22ji: (Int,Int,Int,Int,Int,Int,Double,Double) = (1,2,3,4,5,5, 3.14,3.14)
+
+let (numberSingh, stringKaur) = tupleSingh
+print(numberSingh,stringKaur)
+
+let (webError,_) = tupleSingh
+print(webError)
+
+// Tuple can access by index number starting at 0 index number,
+print(tupleSingh.0); print(tupleSingh.1)
+
+let tupleValueAtsameTime = (statusCode: 200, value:"ok")
+print(tupleValueAtsameTime.statusCode)
+print(tupleValueAtsameTime.1)
+print(tupleValueAtsameTime.0)
+print(tupleValueAtsameTime.value)
+print(tupleValueAtsameTime)
