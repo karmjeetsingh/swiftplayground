@@ -164,3 +164,45 @@ print(tupleValueAtsameTime.1)
 print(tupleValueAtsameTime.0)
 print(tupleValueAtsameTime.value)
 print(tupleValueAtsameTime)
+
+//MARK: OPTIONALS
+//we use optional ? where Value may be absent.
+// optional only in swift not was in objective c
+// two possibilites either, there is a value and can be unwrap the optional to access that value, or there is no value at all.
+
+var serverResponse: Int? = 404
+serverResponse = nil
+// only optional veriable or constant can take nil. otherwise we can't store nil in varialbe constant
+var surwayAnswer: String?
+print(surwayAnswer ?? 5)
+
+
+let name: String? = nil
+var surway: Int?  // default nil in optional
+
+
+//MARK: if statements and forced unwrapping
+//  ==  or  !=  if else
+// 3 ways to handle optional by default value, Force unrapping , Cast optional to Any
+let numberInString: String = "1234"
+let stringToNumber: Int? = Int(numberInString)
+
+if stringToNumber != nil {
+    print(stringToNumber!)
+}else{
+   
+}
+// Force unwrapping on nil value. trigger Runtime error
+
+//MARK:  Optional Binding
+// Can be used with if loop and while loop
+
+/* if let ConstantName = SomeOptionalValue {
+        statement
+    }
+*/
+if let numberInString: Int = Int(numberInString){
+    print(numberInString + numberInString)
+}
+    //NOTE:-  newName is of optional type , numberInString in if let is tempraroy scope
+// replace numberInString by newName
