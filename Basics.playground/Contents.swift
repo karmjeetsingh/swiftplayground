@@ -206,3 +206,93 @@ if let numberInString: Int = Int(numberInString){
 }
     //NOTE:-  newName is of optional type , numberInString in if let is tempraroy scope
 // replace numberInString by newName
+
+if let firstNum = Int("1"), let secondNum = Int("2"), firstNum < secondNum && secondNum < 10 {
+    print("\(firstNum)<\(secondNum)<10")
+}
+if let firstNum = Int("3"){
+    if let secondNum = Int("4")
+    {
+        if firstNum < secondNum && secondNum < 12 {
+            print(" \(firstNum) < \(secondNum) < 12")
+        }
+    }
+}
+
+//NOTE:- variable and constant created in Guard statement are available later to use as well
+
+//MARK: Implicitly Unwraped Optionals
+// where we know value is always exists. safely remove the condition to check all time , that optional is IUO. So we can use Exclamation sign after that type of optional when we declare. instread of optional name .. WITH OPTIONAL TYPE instead of Name.. Primary use of IUO in class initialization .
+
+let possibleString: String? = "An optional String"
+let forceString: String = possibleString! // Unwrapping
+print(forceString)
+print(type(of: forceString))
+print(type(of: possibleString))
+
+let assumedString: String! = "A IU opt"
+print(assumedString)
+let implicit: String = assumedString
+print(implicit)
+let optionalString = assumedString
+print(optionalString)
+
+if assumedString != nil {
+    print(assumedString!)
+}
+if let realString = assumedString{
+    print(realString)
+    print(type(of:realString))
+}
+
+//MARK: Error Handling
+
+// Error handling allows to deterimine cause of failure and when function encounter an error condition . It throws an error.  while calling fucntion, catch the error and respond appropriately.. whie calling a function which throws , prepend try keyword.
+func canThrowAnError() throws{
+    
+}
+// do statement allows errors to be propagated to one or more catch clauses.
+do {
+    try canThrowAnError()
+} catch {
+}
+
+func makeSandwich() throws{
+    
+}
+//do {
+//    try makeSandwich()
+//} catch sandwich.outofcleanDishes{
+//    washDishehs()
+//} catch SandwhichError.missingFoodItemas(let ingredients){
+//    buygorcier(ingredients)
+//}
+
+
+//MARK: Assertions and Preconditions
+// A and P are checks that happen at runtime. Assertion help to find mistake during development and Preconditions help to detect issue in production.
+//Assertion only check in debug builds, precondition checked in both debug and productoin build.
+//assert(<#T##condition: Bool##Bool#>)
+//assert(_:_:file:line:)
+let agy = 2
+assert(agy >= 0, "a person can't be less then 0")
+assert(agy >= 0)
+//OR
+if agy > 10 {
+    print("teen")
+} else if agy >= 0 {
+    print("good")
+} else {
+    assertionFailure("less then zero")
+}
+
+//------> PRECONDITIONS : When ever condition has the posssiblities to be false. but code definitely need true to continue execution
+precondition(agy > 0,"no age is less")
+
+if agy>0 {
+} else {
+    preconditionFailure("age is less")
+}
+// In uncheck mode . precondition not checked. complier assume precondition always true.
+//but we can use fatalError("message") function , it always halts execution reardless of setting
+//fatalError("message")
