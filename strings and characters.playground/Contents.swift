@@ -113,4 +113,7 @@ welcome.removeSubrange(range)
     // Both string and substring conform to the stringProtocol
 // String consider equal if  their extended grapheme cluster are canonically equivalent.
 
+var test = Array(repeating: 1, count: 3)
+print(test)
 
+// 
