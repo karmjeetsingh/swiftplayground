@@ -85,19 +85,116 @@ default:
     print("out of range")
 }
 
-let somePoint = (1,1)
+let somePoint = (0,0)
 switch somePoint {
-case (0,0): print("origin")
+case (0,0):print("break"); break
 case (_,0): print("origin")
-case (0,_): print("origin")
-case (-2...2, -2..<2): print("origin")
+case (0,_): print("origin2")
+case (-2...2, -2..<2): print("origin..ttyjty")
 default: print("ouside somewhere")
 }
-
-
 let graphPoint = (3,2)
 switch graphPoint{
 case (var x, 0): print("on x axies\(x)")
 case (1, let y): print("on \(y) ")
 case let(x,y): print(x,y)
+}
+
+// Continue statement
+// stop what you are doing and  continue from next iteration
+// without leaving the loop
+
+let puzzleInput: String = "great minds think alike"
+var puzzleOutput = ""
+let characterToRemove: [Character] = ["a", "e", "i", "o", "u", " "]
+for charact in puzzleInput {
+    if characterToRemove.contains(charact){
+        continue
+    }
+    puzzleOutput.append(charact)
+}
+print(puzzleOutput)
+
+var num1 = 5
+num1 *= 2
+
+print(num1)
+
+
+while i <= 60 {
+    print(i)
+    if i == 50 { break}
+    i += 1
+}
+
+let integer = 5
+var des = "the number \(integer)"
+
+switch integer {
+case 1, 2, 4, 6, 7, 5:
+    des += "a prime number and "
+    fallthrough
+default:
+    des += "an integer number"
+}
+print(des)
+
+//MARK:  Labeled Statements
+// multiple loops and conditional statemtement some time hard to visualize, In that case labeled statements very useful.
+var loopOne: Int = 0
+functionalityOne: while loopOne <= 5 {
+    print(loopOne)
+    
+    break functionalityOne
+}
+
+//MARK: WHERE CLAUSE
+/* switch can use where clause to check addtional condition */
+let daig = (1,2)
+switch daig{
+case let (x,y) where x == y: print("ok")
+case var (x,0) where x < 2: print("less then 2")
+case (var x, var y) where x < y : print("x < y")
+case var(x,u): print(x,u)
+    
+}
+
+//MARK: GUARD STATEMENT  , Early exit
+/* guard is alternative to if and else, but in guard else alwasy comes , code continue to execute if guard condition is ture */
+
+func greet(person: [String: String]){
+    guard let name = person["name"] else {
+        return
+    }
+    print("ehllo \(name)")
+    
+    guard let location = person["location"] else {
+        print(" nice near u ")
+        return
+        //fatalError("googli")
+    }
+    print("weather location \(location)")
+}
+greet(person: ["name" : "jon"])
+greet(person: ["name" : "jogi singh", "location ": "MD"])
+
+
+//MARK: API AVAILABILITY
+if #available(iOS 10, macOS 11.2, *){
+    
+} else {
+    
+}
+
+@available(mac 10.12, *)
+struct ColorPreference {
+    var bestColor = "blue"
+}
+
+func chooseBestColor() -> String {
+    guard #available(macOS 10.12, *) else {
+        return "gray"
+    }
+    let colors = ColorPreference()
+    return colors.bestColor
 }
