@@ -2,5 +2,13 @@
 <Timeline
    version = "3.0">
    <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/karmjeetsingh/Documents/code/swift/playground/swiftplayground/closures.playground#CharacterRangeLen=17&amp;CharacterRangeLoc=739&amp;EndingColumnNumber=0&amp;EndingLineNumber=26&amp;StartingColumnNumber=1&amp;StartingLineNumber=25&amp;Timestamp=691820578.925707"
+         selectedRepresentationIndex = "0">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/karmjeetsingh/Documents/code/swift/playground/swiftplayground/closures.playground#CharacterRangeLen=12&amp;CharacterRangeLoc=608&amp;EndingColumnNumber=0&amp;EndingLineNumber=21&amp;StartingColumnNumber=1&amp;StartingLineNumber=20&amp;Timestamp=691820578.925801"
+         selectedRepresentationIndex = "0">
+      </LoggerValueHistoryTimelineItem>
    </TimelineItems>
 </Timeline>
