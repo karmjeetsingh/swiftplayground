@@ -114,10 +114,10 @@ func answer(_ expression: Arithmetic) -> Int {
     switch expression {
     case  .number(let value):
         return value
-    case let .addition(left, right):
-        return answer(left) + answer(right)
     case let .multiplication(left, right):
         return answer(left) * answer(right)
+    case let .addition(left, right):
+        return answer(left) + answer(right)
     }
 }
-print(answer(four))
+print(answer(sum))
